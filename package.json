@@ -34,7 +34,7 @@
     "test": "vitest run",
     "test:fast": "vitest run --exclude \"tests/daemon/**\" --exclude \"tests/daemon-and-api/**\"",
     "hooks:install": "git config core.hooksPath scripts/git-hooks",
-    "postinstall": "npm run hooks:install && prisma generate",
+    "postinstall": "(npm run hooks:install || true) && prisma generate",
     "upload-keys:generate": "tsx scripts/utils/generate-upload-keys.ts",
     "tools:convert-preview": "tsx scripts/convert-preview.ts",
     "characters:prepare": "tsx scripts/characters/prepare-character-images.ts",
